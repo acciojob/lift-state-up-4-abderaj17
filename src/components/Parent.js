@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Child from './Child';
 
 const Parent = () => {
     const [cartItem, setCartItem] = useState([]);
@@ -23,18 +24,19 @@ const Parent = () => {
         <h1>Parent Component</h1>
             <label htmlFor='itemName'>
                 Item Name:
-                <input type='text' id='itemName'  />
+                <input type='text' value={itemName} 
+                onChange={(e) => setItemName(e.target.value)} 
+                id='itemName'  />
             </label>
             <br/>
             <label htmlFor='itemPrice'>
                 Item Price:
-                <input type='number' id='itemPrice' /> 
+                <input type='number' value={itemPrice} 
+                onChange={(e)=> setItemPrice(e.target.value)} id='itemPrice' /> 
             </label> 
-            <button id='addItem'>Add Item</button>
-            <div className='child'>
-            <h2>Child Component</h2>
-                <ol className='items'></ol>
-            </div>
+            <button id='addItem' onClick={addItem}>Add Item</button>
+           
+           <Child cartItem={cartItem} removeItem={removeItem} />
         </div>
     </div>
   )
