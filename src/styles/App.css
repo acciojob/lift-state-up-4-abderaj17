@@ -1,6 +1,24 @@
 
 .parent{
+    margin: 10px;
     width: 300px;
     height:auto;
-    background-color: rgb(85, 219, 85);
+    background-color: rgb(21, 160, 6);
+    padding: 10px;
+}
+.child{
+    padding: 10px;
+    background-color: rgb(226, 102, 102);
+    margin: 10px;
+}
+#itemName{
+    padding: 5px;
+    margin: 5px;
+}
+#itemPrice{
+    padding: 5px;
+    margin: 5px;
+}
+#addItem{
+    position: relative;
 }
